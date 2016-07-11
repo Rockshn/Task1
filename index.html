@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">Открыть навигацию</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Логотип</a>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Пункт 1</a></li>
+
+                <li class="dropdown">
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Пункт 2<b class="caret"></b></a>-->
+                    <a href="#">Пункт 2<b class="caret"></b></a>
+                    <ul style="display: none;" class="dropdown-menu bold">
+                        <li><a href="#">Подпункт 1</a></li>
+                        <li><a href="#" id="baseVariant">Базовый вариант</a></li>
+                        <li><a href="#">Подпункт 3</a></li>
+                        <li><a href="#">Подпункт 4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Пункт 3</a></li>
+                <li><a href="#">Пункт 4</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container" id="undoMenu">
+    <div class="row">
+        <h1>Название страницы</h1>
+
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="jquery/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<script src="toggleMenu.js"></script>
+<script src="ajaxReload.js"></script>
+</body>
+</html>
