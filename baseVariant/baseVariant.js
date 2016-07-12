@@ -3,20 +3,14 @@
  */
 
 function acceptTableName(name) {
-    var tableCaption = document.createElement("caption");
-    tableCaption.innerHTML = name;
-    tableCaption.setAttribute("id", "tableCaption");
-
-    var table = document.getElementById("table");
-
-    table.insertBefore(tableCaption, table.firstChild);
+    $("#tableName").html(name);
 };
 
 function acceptBoatNumber(number) {
 
     for (var j = 0; j < number; j++) {
-        var tableRows = $(".table tr").length;
-        var tableCells = $(".table td").length;
+        var tableRows = $("#table tr").length;
+        var tableCells = $("#table td").length;
         var tableCols = tableCells / (tableRows - 1);
 
         var tableRowNumber = tableRows - 1;
@@ -169,6 +163,5 @@ $(function () {
 $(window).keydown(function (event) {
     if (event.keyCode == 13) {
         $('#edit').blur();
-        $('button#acceptNumberBoatBtn').click();
     }
 });
