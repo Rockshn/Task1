@@ -37,24 +37,6 @@ function acceptBoatNumber(number) {
     }
 };
 
-function bubbleSort(b) {
-    var a = b.slice();
-    var swapped;
-    do {
-        swapped = false;
-        for (var i = 0; i < a.length - 1; i++) {
-            if (a[i] < a[i + 1]) {
-                var temp = a[i];
-                a[i] = a[i + 1];
-                a[i + 1] = temp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
-
-    return a;
-}
-
 function calculateCompetitiveness() {
 
     var tableRows = $("#tableBody").find("tr");
@@ -92,11 +74,9 @@ function calculateCompetitiveness() {
                 x = minVal / cellValue;
             }
 
-            if (isNaN(x)) {
-                continue;
+            if (!isNaN(x)) {
+                summa += Math.pow((1 - x), 2);
             }
-
-            summa += Math.pow((1 - x), 2);
         }
 
         coefficient[i - 1] = 1 - Math.sqrt(summa);
@@ -104,19 +84,44 @@ function calculateCompetitiveness() {
         $(tableRows[i]).find("td#competitiveness").html(coefficient[i - 1]);
     }
 
-    var sortedCoeff = bubbleSort(coefficient);
+    var sortedCoeff = coefficient.slice().sort( function (a,b) {
+        return b - a;
+    });
 
+    var uniqueCoeff = getUnique(sortedCoeff);
 
-    for (var j = 0; j < coefficient.length; j++) {
-        for (var i = 0; i < sortedCoeff.length; i++) {
-            if (coefficient[j] === sortedCoeff[i]) {
-                $(tableRows[j + 1]).find("td#place").html(i + 1);
-            }
-        }
+    var place = 0;
+    for (var i = 0; i < coefficient.length; i++) {
+        var place = find(uniqueCoeff, coefficient[i]) + 1;
+        $(tableRows[i + 1]).find("td#place").html(place);
     }
 
 };
 
+function find(array, value) {
+    if (array.indexOf) { // если метод существует
+        return array.indexOf(value);
+    }
+
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) return i;
+    }
+
+    return -1;
+}
+
+var getUnique = function (arr) {
+    var current;
+    var length = arr.length;
+    var unique = [];
+    for (var i = 0; i < length; i++) {
+        current = arr[i];
+        if (!~unique.indexOf(current)) {
+            unique.push(current);
+        }
+    }
+    return unique;
+};
 
 $("button").click(function () {
     var btn = $(this);
@@ -152,6 +157,7 @@ $(function () {
         var val = $(this).html();
         var code = '<input type="text" id="edit" value="' + val + '" />';
         $(this).empty().append(code);
+        console.log($(this).html());
         $('#edit').focus();
         $('#edit').blur(function () {
             var val = $(this).val();

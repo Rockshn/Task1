@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Base Variant</title>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Task1</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,33 +18,36 @@
 </head>
 <body>
 <div class="container">
-    <h1>Рассчёт уровня конкуренции судна</h1>
-    <form>
-        <label for="inputNameTable">Название таблицы:</label>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group ">
-                    <input type="text" class="form-control" id="inputNameTable" placeholder="Введите название таблицы...">
+    <div class="row">
+        <h1>Рассчёт уровня конкуренции судна</h1>
+        <form>
+            <label for="inputNameTable">Название таблицы:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group ">
+                        <input type="text" class="form-control" id="inputNameTable"
+                               placeholder="Введите название таблицы...">
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" id="acceptNameTableBtn">Ок</button>
                     </span>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <label for="inputNumberBoats">Количество судов:</label>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="inputNumberBoats" placeholder="Введите количество судов...">
+            <label for="inputNumberBoats">Количество судов:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inputNumberBoats"
+                               placeholder="Введите количество судов...">
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" id="acceptNumberBoatBtn">Ок</button>
                     </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 <div class="container">
@@ -103,17 +103,19 @@
         </table>
     </div>
 
-    <button id="calculate" type="button" class="btn btn-success">Вычислить</button>
-
 </div>
 
 <div class="container">
+
+    <button id="calculate" type="button" class="btn btn-success">Вычислить</button>
+
     <button class="btn btn-info" id="callInfoModal" data-toggle="modal" data-target="#infoModal">
         Информация
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -136,9 +138,9 @@
                                 <td>X<sub>1</sub></td>
                                 <td>+</td>
                             </tr>
-                                <td>2.Класс Регистра</td>
-                                <td>X<sub>2</sub></td>
-                                <td>+</td>
+                            <td>2.Класс Регистра</td>
+                            <td>X<sub>2</sub></td>
+                            <td>+</td>
                             <tr>
                                 <td>3.Среднегодовые удельные затраты на ремонт</td>
                                 <td>X<sub>3</sub></td>
@@ -159,9 +161,9 @@
                                 <td>X<sub>6</sub></td>
                                 <td>-</td>
                             </tr>
-                                <td>7.Возраст судна</td>
-                                <td>X<sub>7</sub></td>
-                                <td>+</td>
+                            <td>7.Возраст судна</td>
+                            <td>X<sub>7</sub></td>
+                            <td>+</td>
                             <tr>
                                 <td>8.Длительность ремонтного цикла</td>
                                 <td>X<sub>8</sub></td>
@@ -182,9 +184,9 @@
                                 <td>X<sub>11</sub></td>
                                 <td>+</td>
                             </tr>
-                                <td>12.Соответствие судна международным правилам и конвенциям</td>
-                                <td>X<sub>12</sub></td>
-                                <td>-</td>
+                            <td>12.Соответствие судна международным правилам и конвенциям</td>
+                            <td>X<sub>12</sub></td>
+                            <td>-</td>
                             <tr>
                                 <td>13.Скорость судна</td>
                                 <td>X<sub>13</sub></td>
@@ -250,9 +252,7 @@
                                 <td>X<sub>25</sub></td>
                                 <td>-</td>
                             </tr>
-
                             </tbody>
-
                         </table>
                     </div>
                 </div>
@@ -266,9 +266,9 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../jquery/jquery-1.12.4.js"></script>
+<script src="jquery/jquery-1.12.4.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.js"></script>
-<script src="baseVariant.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="baseVariant/baseVariant.js"></script>
 </body>
 </html>

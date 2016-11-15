@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Class</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h2>Денежные потоки по проекту повышения класса регистра</h2>
+    </div>
+
+    <div class="flex-area">
+        <div id="buttonsAndForms">
+            <div id="input-forms">
+                <form>
+                    <label for="upgrade-cost">Стоимость модернизации:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="upgrade-cost"
+                               placeholder="Введите стоимость модернизации...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="discount-rate">Ставка дискотирования:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="discount-rate"
+                               placeholder="Введите ставку дискотирования...">
+                    </div>
+
+                </form>
+
+                <form>
+                    <label for="deadweight-before-upgrade">Дедвейт до модернизации:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="deadweight-before-upgrade"
+                               placeholder="Введите дедвейт до модернизации...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="deadweight-after-upgrade">Дедвейт после модернизации:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="deadweight-after-upgrade"
+                               placeholder="Введите дедвейт после модернизации...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="register-class-before-upgrade">Класс регистра до модернизации:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" min="5" max="100" class="form-control" id="register-class-before-upgrade"
+                               placeholder="Введите класс регистра до модернизации...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="register-class-after-upgrade">Класс регистра после модернизации:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" min="5" max="100" class="form-control" id="register-class-after-upgrade"
+                               placeholder="Введите класс регистра после модернизации...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="effective-gross-income">Действительный валовый доход:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="effective-gross-income"
+                               placeholder="Введите действительный валовый доход...">
+                    </div>
+
+                </form>
+
+                <form>
+                    <label for="repair-costs">Затраты на ремонт:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="repair-costs"
+                               placeholder="Введите Затраты на ремонт...">
+                    </div>
+                </form>
+
+                <form>
+                    <label for="operating-costs">Эксплуатационные расходы:</label>
+
+                    <div class="input-group ">
+                        <input type="number" step="any" class="form-control" id="operating-costs"
+                               placeholder="Введите Эксплуатационные расходы...">
+                    </div>
+                </form>
+            </div>
+
+            <div id="buttons">
+                <button id="calculate" type="button" class="btn btn-success">Вычислить</button>
+
+                <!-- Modal Button start -->
+                <button class="btn btn-info" id="callInfoModal" data-toggle="modal" data-target="#infoModal">
+                    Информация
+                </button>
+
+                <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="infoModalLabel">Информация</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-responsive" id="modal-table">
+                                        <thead>
+                                        <tr>
+                                            <th rowspan="2">Наименование показателя</th>
+                                            <th rowspan="2">Ед. измерения</th>
+                                            <th colspan="6">Годы</th>
+                                            <th rowspan="2">Сумма</th>
+                                        </tr>
+                                        <tr>
+                                            <th>0</th>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                        <tr>
+                                            <td class="firstColumn">Действительный валовый доход</td>
+                                            <td>Тыс.дол</td>
+                                            <td> -</td>
+                                            <td>404.4</td>
+                                            <td>528.9</td>
+                                            <td>535.9</td>
+                                            <td>532.5</td>
+                                            <td>480</td>
+                                            <td>2481.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Затраты на ремонт</td>
+                                            <td>Тыс.дол</td>
+                                            <td> -</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>160</td>
+                                            <td>0</td>
+                                            <td>220</td>
+                                            <td>380</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Эксплуатационные расходы</td>
+                                            <td>Тыс.дол</td>
+                                            <td> -</td>
+                                            <td>198.8</td>
+                                            <td>230.6</td>
+                                            <td>250.7</td>
+                                            <td>217.2</td>
+                                            <td>201.8</td>
+                                            <td>1099.3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Чистый денежный поток до модернизации</td>
+                                            <td>Тыс.дол</td>
+                                            <td> -</td>
+                                            <td>205.6</td>
+                                            <td>298.3</td>
+                                            <td>125.2</td>
+                                            <td>315.3</td>
+                                            <td>58.1</td>
+                                            <td>1002.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Чистый денежный поток до модернизации(без учета
+                                                затрат
+                                                на
+                                                ремонт)
+                                            </td>
+                                            <td>Тыс.дол</td>
+                                            <td></td>
+                                            <td>205.6</td>
+                                            <td>298.3</td>
+                                            <td>125.2</td>
+                                            <td>315.3</td>
+                                            <td>58.1</td>
+                                            <td>1002.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Дисконтированный чистый денежный поток до
+                                                модернизации
+                                            </td>
+                                            <td>Тыс.дол</td>
+                                            <td></td>
+                                            <td>171.3</td>
+                                            <td>207.1</td>
+                                            <td>72.4</td>
+                                            <td>152.1</td>
+                                            <td>23.3</td>
+                                            <td>626.3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Удельный чистый денежный поток до модернизации</td>
+                                            <td>Долл./т</td>
+                                            <td></td>
+                                            <td>93.9</td>
+                                            <td>136.2</td>
+                                            <td>130.2</td>
+                                            <td>143.9</td>
+                                            <td>127</td>
+                                            <td>631.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Удельный чистый денежный поток после модернизации
+                                            </td>
+                                            <td>Долл./т</td>
+                                            <td></td>
+                                            <td>180.9</td>
+                                            <td>151.2</td>
+                                            <td>145.21</td>
+                                            <td>158.96</td>
+                                            <td>142</td>
+                                            <td>706.28</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Чистый денежный поток после модернизации</td>
+                                            <td>Тыс.Долл</td>
+                                            <td></td>
+                                            <td>346.6</td>
+                                            <td>481.3</td>
+                                            <td>462.2</td>
+                                            <td>505.9</td>
+                                            <td>451.9</td>
+                                            <td>2248.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Дисконтированный чистый денежный поток после
+                                                модернизации
+                                            </td>
+                                            <td>Тыс.Долл</td>
+                                            <td></td>
+                                            <td>288.9</td>
+                                            <td>334.2</td>
+                                            <td>267.5</td>
+                                            <td>244.1</td>
+                                            <td>181.6</td>
+                                            <td>1316.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="firstColumn">Кумулятивный чистый дисконтированный денежный
+                                                поток
+                                            </td>
+                                            <td>Тыс.Долл</td>
+                                            <td></td>
+                                            <td>-560</td>
+                                            <td>-271.1</td>
+                                            <td>63.1</td>
+                                            <td>330.6</td>
+                                            <td>574.6</td>
+                                            <td>756.2</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Button end -->
+            </div>
+        </div>
+
+        <div id="table">
+            <table class="table table-striped table-bordered table-responsive">
+                <tr>
+                    <th rowspan="2">Наименование показателя</th>
+                    <th rowspan="2">Ед. измерения</th>
+                    <th colspan="6">Годы</th>
+                    <th rowspan="2">Сумма</th>
+                </tr>
+                <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+                <tbody id="main-table-body">
+                <tr>
+                    <td class="firstColumn">Действительный валовый доход</td>
+                    <td>Тыс.дол</td>
+                    <td> -</td>
+                    <td>404.4</td>
+                    <td>528.9</td>
+                    <td>535.9</td>
+                    <td>532.5</td>
+                    <td>480</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Затраты на ремонт</td>
+                    <td>Тыс.дол</td>
+                    <td> -</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>160</td>
+                    <td>0</td>
+                    <td>220</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Эксплуатационные расходы</td>
+                    <td>Тыс.дол</td>
+                    <td> -</td>
+                    <td>198.8</td>
+                    <td>230.6</td>
+                    <td>250.7</td>
+                    <td>217.2</td>
+                    <td>201.8</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Чистый денежный поток до модернизации</td>
+                    <td>Тыс.дол</td>
+                    <td> -</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Чистый денежный поток до модернизации(без учета затрат на ремонт)</td>
+                    <td>Тыс.дол</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Дисконтированный чистый денежный поток до модернизации</td>
+                    <td>Тыс.дол</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Удельный чистый денежный поток до модернизации</td>
+                    <td>Долл./т</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Удельный чистый денежный поток после модернизации</td>
+                    <td>Долл./т</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Чистый денежный поток после модернизации</td>
+                    <td>Тыс.Долл</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Дисконтированный чистый денежный поток после модернизации</td>
+                    <td>Тыс.Долл</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="firstColumn">Кумулятивный чистый дисконтированный денежный поток</td>
+                    <td>Тыс.Долл</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="jquery/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+<script src="MonetaryFlows/registerClass.js"></script>
+</body>
+</html>

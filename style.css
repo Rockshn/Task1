@@ -1,3 +1,45 @@
-/*.dropdown-menu .sub-menu-level1, .dropdown-menu .sub-menu-level2 {left:100%;position:absolute;top:0;visibility:hidden;margin-top: 0;}*/
-/*.dropdown-menu li:hover .sub-menu-level1 {visibility:visible;}*/
-/*.dropdown-menu li li:hover .sub-menu-level2 {visibility:visible;}*/
+td, th {
+    text-align: center;
+}
+
+.firstColumn {
+    text-align: left;
+    width:20%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container button[data-toggle='modal']{
+    display:inline;
+    width: auto;
+    margin-left: auto;
+}
+
+.container #calculate {
+    display:inline;
+    width: auto;
+    margin-right: auto;
+}
+
+form .input-group {
+    width: 250px;
+}
+
+#table {
+    width: 800px;
+}
+
+#input-forms {
+    padding-bottom: 20px;
+}
+
+#buttonsAndForms {
+    display:flex;
+    flex-direction: column;
+}
+.flex-area {
+    display: flex;
+    justify-content: space-between;
+}
