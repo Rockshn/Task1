@@ -11,18 +11,6 @@ h2 {
     text-align: center;
 }
 
-.container button[data-toggle='modal']{
-    display:inline;
-    width: auto;
-    margin-left: auto;
-}
-
-.container #calculate {
-    display:inline;
-    width: auto;
-    margin-right: auto;
-}
-
 form .input-group {
     width: 250px;
 }
@@ -39,7 +27,20 @@ form .input-group {
     display:flex;
     flex-direction: column;
 }
+
 .flex-area {
     display: flex;
     justify-content: space-between;
+}
+
+#table-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+#main-page-table {
+    width: 450px;
+    height: 400px;
 }
